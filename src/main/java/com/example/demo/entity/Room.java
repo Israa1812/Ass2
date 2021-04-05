@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,26 +6,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Book {
+public class Room {
 
     @Id
     @GeneratedValue
     @Column(name = "IdRoom")
     private int IdRoom;
+    @Column(name = "typeRoom")
+    private String typeRoom;
     @Column(name = "isVailed")
     private boolean isVailed ;
     @Column(name = "nameCustmor")
-    private char nameCustmor;
+    private String nameCustmor;
 
-    public Book(){
+    public Room() {
     }
-
     public int getIdRoom() {
         return IdRoom;
     }
-
     public void setIdRoom(int idRoom) {
         IdRoom = idRoom;
+    }
+
+    public String getTypeRoom() {
+        return typeRoom;
+    }
+
+    public void setTypeRoom(String typeRoom) {
+        this.typeRoom = typeRoom;
     }
 
     public boolean isVailed() {
@@ -36,13 +44,11 @@ public class Book {
         isVailed = vailed;
     }
 
-    public char getNameCustmor() {
+    public String getNameCustmor() {
         return nameCustmor;
     }
 
-    public void setNameCustmor(char nameCustmor) {
+    public void setNameCustmor(String nameCustmor) {
         this.nameCustmor = nameCustmor;
     }
-
 }
-
